@@ -7,13 +7,13 @@
 #include <string>
 
 extern int viewportWidth, viewportHeight;
-extern Texture* fontTexture;
+extern Texture* debugFontTexture;
 extern Shader* fontShader;
 extern Shader* identityShader;
 
 void drawChar(char c, int x, int y, float scale=1.f) {
     fontShader->use();
-    fontTexture->activate(1);
+    debugFontTexture->activate(1);
     fontShader->set("fontTex", 1);
 
     fontShader->set("charIndex", (int)c);
